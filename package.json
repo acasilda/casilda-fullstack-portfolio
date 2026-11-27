@@ -1,15 +1,17 @@
+
 {
   "name": "casilda-fullstack-portfolio",
   "version": "1.0.0",
   "description": "Casilda A - Full Stack Developer Portfolio",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
-    "dev": "node --watch server.js"
+    "start": "node server.js"
   },
-  "engines": { "node": ">=20" },
+  "engines": {
+    "node": "22.x"
+  },
   "dependencies": {
-    "better-sqlite3": "^11.7.0",
+    "better-sqlite3": "^11.10.0",
     "express": "^4.21.2"
   }
 }
