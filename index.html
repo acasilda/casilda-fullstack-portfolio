@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Casilda A's personal portfolio showcasing skills, projects and development journey.">
+  <meta name="theme-color" content="#090b14">
+  <title>Casilda A | Full Stack Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="background-glow glow-one"></div>
+  <div class="background-glow glow-two"></div>
+
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Main navigation">
+      <a class="logo" href="#home">CASILDA<span>.</span></a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a class="nav-contact" href="#contact">Let's Talk <span>↗</span></a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero container section" id="home">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot"></span> AVAILABLE FOR LEARNING & OPPORTUNITIES</p>
+        <h1>Hi, I'm <span class="gradient-text">Casilda A.</span><br>Building ideas into<br><span class="outline-text">digital experiences.</span></h1>
+        <p class="hero-description">Computer Science Engineering student passionate about web development, programming and creating useful digital solutions.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#projects">Explore my work <span>↗</span></a>
+          <a class="button button-secondary" href="#contact">Contact me</a>
+        </div>
+        <div class="social-links">
+          <a href="https://github.com/" target="_blank" rel="noreferrer">GitHub ↗</a>
+          <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-label="Decorative developer illustration">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="code-card">
+          <div class="code-card-top"><i></i><i></i><i></i><span>developer.js</span></div>
+          <pre><code><span class="code-purple">const</span> developer = {
+  name: <span class="code-green">"Casilda A"</span>,
+  role: <span class="code-green">"CSE Student"</span>,
+  skills: [
+    <span class="code-green">"HTML"</span>,
+    <span class="code-green">"CSS"</span>,
+    <span class="code-green">"JavaScript"</span>,
+    <span class="code-green">"Python"</span>
+  ],
+  passion: <span class="code-green">"Building"</span>
+};
+
+<span class="code-purple">console</span>.log(developer);<span class="cursor">|</span></code></pre>
+        </div>
+        <div class="floating-chip chip-top">✦ Creative thinker</div>
+        <div class="floating-chip chip-bottom">{"</>"} Code & create</div>
+      </div>
+    </section>
+
+    <section class="section container" id="about">
+      <div class="section-heading">
+        <p class="eyebrow">GET TO KNOW ME</p>
+        <h2>About <span class="gradient-text">Me</span></h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-card panel">
+          <p class="large-copy">I'm a Computer Science Engineering student who enjoys turning ideas into practical solutions through technology.</p>
+          <p>I'm interested in web development, programming and problem-solving. I enjoy learning new tools, building projects and improving my skills through hands-on experience.</p>
+          <a class="text-link" href="#contact">Let's connect <span>↗</span></a>
+        </div>
+        <div class="about-details">
+          <div class="detail-card panel"><span class="detail-icon">🎓</span><div><h3>Education</h3><p>B.E. Computer Science and Engineering</p><small>K. Ramakrishnan College of Engineering, Trichy</small></div></div>
+          <div class="detail-card panel"><span class="detail-icon">💡</span><div><h3>Interests</h3><p>Web Development · Problem Solving</p><small>Learning by building and experimenting</small></div></div>
+          <div class="detail-card panel"><span class="detail-icon">🎯</span><div><h3>Career Goal</h3><p>Software Development</p><small>Growing into a skilled technology professional</small></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container" id="skills">
+      <div class="section-heading">
+        <p class="eyebrow">WHAT I WORK WITH</p>
+        <h2>Technical <span class="gradient-text">Skills</span></h2>
+        <p class="section-subtitle">Technologies and tools I have been learning and using in my projects.</p>
+      </div>
+      <div class="skills-grid">
+        <article class="skill-card panel"><span class="skill-symbol">⌘</span><h3>Frontend</h3><div class="tag-list"><span>HTML5</span><span>CSS3</span><span>JavaScript</span></div></article>
+        <article class="skill-card panel"><span class="skill-symbol">⌁</span><h3>Programming</h3><div class="tag-list"><span>C</span><span>Python</span><span>Java</span></div></article>
+        <article class="skill-card panel"><span class="skill-symbol">▤</span><h3>Backend</h3><div class="tag-list"><span>Node.js</span><span>Express.js</span><span>Learning</span></div></article>
+        <article class="skill-card panel"><span class="skill-symbol">◈</span><h3>Database & Tools</h3><div class="tag-list"><span>SQLite</span><span>GitHub</span><span>VS Code</span></div></article>
+      </div>
+    </section>
+
+    <section class="section container" id="projects">
+      <div class="section-heading section-heading-row">
+        <div><p class="eyebrow">SELECTED WORK</p><h2>Featured <span class="gradient-text">Projects</span></h2></div>
+        <span class="database-label"><span class="status-dot"></span> Loaded from database</span>
+      </div>
+      <div class="projects-grid" id="projectsGrid" aria-live="polite">
+        <p class="loading-message">Loading projects...</p>
+      </div>
+    </section>
+
+    <section class="section container" id="experience">
+      <div class="section-heading">
+        <p class="eyebrow">MY LEARNING JOURNEY</p>
+        <h2>Experience & <span class="gradient-text">Growth</span></h2>
+      </div>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content panel"><span class="timeline-date">NOVEMBER – DECEMBER 2026</span><h3>Full Stack Development Intern</h3><h4>Thiranex EduTech LLP</h4><p>Internship opportunity focused on developing practical skills in frontend and backend web development through project-based learning.</p></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-marker"></div>
+          <div class="timeline-content panel"><span class="timeline-date">ACADEMIC LEARNING</span><h3>B.E. Computer Science and Engineering</h3><h4>K. Ramakrishnan College of Engineering</h4><p>Building foundations in programming, computer science concepts and software development.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section container contact-section" id="contact">
+      <div class="contact-intro">
+        <p class="eyebrow">HAVE A PROJECT IN MIND?</p>
+        <h2>Let's build something <span class="gradient-text">meaningful.</span></h2>
+        <p>Have a question, idea or opportunity? Send me a message using the form.</p>
+        <div class="contact-note"><span>✉</span><div><strong>Get in touch</strong><small>Your message will be saved securely in the portfolio database.</small></div></div>
+      </div>
+      <form class="contact-form panel" id="contactForm">
+        <label for="name">Your name</label><input id="name" name="name" type="text" placeholder="Enter your name" maxlength="100" required>
+        <label for="email">Email address</label><input id="email" name="email" type="email" placeholder="you@example.com" maxlength="150" required>
+        <label for="subject">Subject</label><input id="subject" name="subject" type="text" placeholder="What is this about?" maxlength="150" required>
+        <label for="message">Message</label><textarea id="message" name="message" rows="4" placeholder="Write your message..." maxlength="2000" required></textarea>
+        <button class="button button-primary submit-button" type="submit">Send message <span>↗</span></button>
+        <p class="form-status" id="formStatus" role="status"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner"><a class="logo" href="#home">CASILDA<span>.</span></a><p>Designed & built with curiosity. © <span id="year"></span> Casilda A.</p><a href="#home">Back to top ↑</a></div>
+  </footer>
+</body>
+</html>
