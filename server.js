@@ -7,7 +7,19 @@ const app = express();
 const PORT = process.env.PORT || 10000;
 
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "public")));
+
+// Frontend files are in the root folder
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "index.html"));
+});
+
+app.get("/style.css", (req, res) => {
+  res.sendFile(path.join(__dirname, "style.css"));
+});
+
+app.get("/script.js", (req, res) => {
+  res.sendFile(path.join(__dirname, "script.js"));
+});
 
 const db = new Database(
   process.env.DB_PATH || path.join(__dirname, "portfolio.db")
@@ -40,50 +52,24 @@ if (count === 0) {
     VALUES (?, ?, ?, ?)
   `);
 
-  insert.run(
-    "Personal Portfolio",
-    "My personal portfolio website",
-    "HTML, CSS, JavaScript",
-    "https://github.com/"
-  );
-
-  insert.run(
-    "Python Converter",
-    "A unit conversion application",
-    "Python",
-    "https://github.com/"
-  );
-
-  insert.run(
-    "Smart Parking System",
-    "Parking management using C",
-    "C Programming",
-    "https://github.com/"
-  );
+  insert.run("Personal Portfolio", "My portfolio website", "HTML, CSS, JavaScript", "");
+  insert.run("Python Converter", "Unit converter application", "Python", "");
+  insert.run("Smart Parking System", "Parking management project", "C", "");
 }
 
-// Homepage
-app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
+app.get("/api/health", (req, res) => {
+  res.json({ status: "OK" });
 });
 
-// Projects API
 app.get("/api/projects", (req, res) => {
-  const projects = db.prepare(
-    "SELECT * FROM projects ORDER BY id DESC"
-  ).all();
-
-  res.json(projects);
+  res.json(db.prepare("SELECT * FROM projects ORDER BY id DESC").all());
 });
 
-// Add project
 app.post("/api/projects", (req, res) => {
   const { title, description, technologies, link } = req.body;
 
   if (!title) {
-    return res.status(400).json({
-      error: "Project title is required"
-    });
+    return res.status(400).json({ error: "Title required" });
   }
 
   const result = db.prepare(`
@@ -91,20 +77,14 @@ app.post("/api/projects", (req, res) => {
     VALUES (?, ?, ?, ?)
   `).run(title, description || "", technologies || "", link || "");
 
-  res.status(201).json({
-    success: true,
-    id: result.lastInsertRowid
-  });
+  res.status(201).json({ success: true, id: result.lastInsertRowid });
 });
 
-// Contact form
 app.post("/api/contact", (req, res) => {
   const { name, email, message } = req.body;
 
   if (!name || !email || !message) {
-    return res.status(400).json({
-      error: "All fields are required"
-    });
+    return res.status(400).json({ error: "All fields are required" });
   }
 
   db.prepare(`
@@ -112,20 +92,7 @@ app.post("/api/contact", (req, res) => {
     VALUES (?, ?, ?)
   `).run(name, email, message);
 
-  res.status(201).json({
-    success: true,
-    message: "Message received successfully"
-  });
-});
-
-// Health check
-app.get("/api/health", (req, res) => {
-  res.json({ status: "OK" });
-});
-
-// Unknown routes
-app.use((req, res) => {
-  res.status(404).send("Page not found");
+  res.status(201).json({ success: true });
 });
 
 app.listen(PORT, "0.0.0.0", () => {
